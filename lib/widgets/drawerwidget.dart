@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gym_app/pages/pages.dart';
+import 'package:gym_app/config/pages.dart';
 
 class DrawerWidget extends StatefulWidget {
   @override

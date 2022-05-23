@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gym_app/pages/pages.dart';
+import 'package:gym_app/config/pages.dart';
+import 'routes/routes.dart';
 
 
 void main() {
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Gym App',
       theme: ThemeData(
     //   primaryColorDark: Colors.black,
@@ -18,15 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.grey,
       ),
   initialRoute: SplashScreen.id ,
-  routes: {
-        SplashScreen.id: (context) => SplashScreen(),
-        SignInPage.id: (context) => SignInPage(),
-        HomePage.id: (context) => HomePage(),
-        MuscleBuildPage.id: (context) => MuscleBuildPage(),
-        WeightLossPage.id: (context) => WeightLossPage(),
-        YogaPage.id: (context) => YogaPage(),
-
-  },
+  routes: routes,
     );
   }
 }

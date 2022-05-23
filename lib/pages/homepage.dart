@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gym_app/pages/pages.dart';
-import 'package:gym_app/widgets/progresswidget.dart';
+import 'package:gym_app/config/pages.dart';
 import 'package:gym_app/widgets/widgets.dart';
-
 
 class HomePage extends StatefulWidget {
   static const String id = 'home_page';
@@ -50,7 +48,8 @@ class _HomePageState extends State<HomePage> {
                               boxImage: 'images/gym1.jpg',
                               title: 'Muscle-Build',
                               onPressed: () {
-                                 Navigator.pushNamed(context, MuscleBuildPage.id);
+                                Navigator.pushNamed(
+                                    context, MuscleBuildPage.id);
                               },
                             ),
                           ),
@@ -62,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                               boxImage: 'images/gym2.jpg',
                               title: 'Weight-Loss',
                               onPressed: () {
-                                   Navigator.pushNamed(context, WeightLossPage.id);
+                                Navigator.pushNamed(context, WeightLossPage.id);
                               },
                             ),
                           ),
@@ -74,7 +73,7 @@ class _HomePageState extends State<HomePage> {
                               boxImage: 'images/gym3.jpg',
                               title: 'Yoga',
                               onPressed: () {
-                                 Navigator.pushNamed(context,YogaPage.id);
+                                Navigator.pushNamed(context, YogaPage.id);
                               },
                             ),
                           ),
@@ -85,34 +84,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 10,
                   ),
-                //  Container(
-                //     child: Text(
-                //       'CURRENT PROGRESS',
-                //       style: TextStyle(
-                //           fontSize: 15,
-                //           fontWeight: FontWeight.w500,
-                //           color: Colors.grey),
-                //     ),
-                //   ),
-                //    SizedBox(
-                //     height: 20,
-                //   ),
-                // Row(
-                //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                //   children: [
-                //    ReportWidget(
-                //     reportInfo: 'Level 5',
-                //    reportTitle: '' ,),
-                //     ReportWidget(
-                //     reportInfo: 'Level 5',
-                //    reportTitle: '' ,),
-                //     ReportWidget(
-                //     reportInfo: 'Level 5',
-                //     reportTitle: '' ,),
-                //   ],
-                // ),
-               
-                Divider(),
+                  Divider(),
                   Container(
                     child: Text(
                       'REPORT',
@@ -132,17 +104,16 @@ class _HomePageState extends State<HomePage> {
                         reportInfo: '27th May',
                         reportTitle: 'Last Workout Date',
                       ),
-                       ReportWidget(
+                      ReportWidget(
                         reportInfo: '120 min',
                         reportTitle: 'Minutes',
                       ),
-                       ReportWidget(
+                      ReportWidget(
                         reportInfo: '500 cal',
                         reportTitle: 'Calories Burnt',
                       ),
                     ],
                   ),
-           
                 ],
               ),
             ),

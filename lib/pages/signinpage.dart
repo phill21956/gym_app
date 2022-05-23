@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:gym_app/pages/pages.dart';
+import 'package:gym_app/config/pages.dart';
+import 'package:gym_app/widgets/bg_image_widget.dart';
+
+import '../widgets/input_widget.dart';
 
 class SignInPage extends StatefulWidget {
   static const String id = 'signin_page';
@@ -14,12 +17,7 @@ class _SignInPageState extends State<SignInPage> {
     return Scaffold(
         body: SingleChildScrollView(
       child: Stack(children: [
-        Image.asset(
-          'images/gym1.jpg',
-          fit: BoxFit.cover,
-          height: deviceSize.height,
-          width: deviceSize.width,
-        ),
+        BgImageWidget(deviceSize: deviceSize),
         Column(
           children: [
             Container(
@@ -37,134 +35,26 @@ class _SignInPageState extends State<SignInPage> {
                     SizedBox(
                       height: 130,
                     ),
-                    new Container(
-                      width: MediaQuery.of(context).size.width,
-                      margin: const EdgeInsets.only(left: 40.0, right: 40.0),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                              //  color: this.foregroundColor,
-                              width: 0.5,
-                              style: BorderStyle.solid),
-                        ),
-                      ),
-                      padding: const EdgeInsets.only(left: 0.0, right: 10.0),
-                      child: new Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          new Padding(
-                            padding: EdgeInsets.only(
-                                top: 10.0, bottom: 10.0, right: 00.0),
-                            child: Icon(
-                              Icons.person_outline_sharp,
-                              color: Colors.white,
-                            ),
-                          ),
-                          new Expanded(
-                            child: TextField(
-                              textAlign: TextAlign.center,
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: 'Full Name',
-                                hintStyle: TextStyle(
-                                  color: Colors.white70,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    InputWidget(
+                      inputIcon: Icons.person_outline_sharp,
+                      inputText: 'Full Name',
                     ),
                     SizedBox(
                       height: 10,
                     ),
-                    new Container(
-                      width: MediaQuery.of(context).size.width,
-                      margin: const EdgeInsets.only(left: 40.0, right: 40.0),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                              //  color: this.foregroundColor,
-                              width: 0.5,
-                              style: BorderStyle.solid),
-                        ),
-                      ),
-                      padding: const EdgeInsets.only(left: 0.0, right: 10.0),
-                      child: new Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          new Padding(
-                            padding: EdgeInsets.only(
-                                top: 10.0, bottom: 10.0, right: 00.0),
-                            child: Icon(
-                              Icons.alternate_email,
-                              color: Colors.white,
-                            ),
-                          ),
-                          new Expanded(
-                            child: TextField(
-                              textAlign: TextAlign.center,
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: 'Input Email',
-                                hintStyle: TextStyle(
-                                  color: Colors.white70,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    InputWidget(
+                      inputIcon: Icons.alternate_email,
+                      inputText: 'Input Email',
                     ),
                     SizedBox(
                       height: 10,
                     ),
-                    new Container(
-                      width: MediaQuery.of(context).size.width,
-                      margin: const EdgeInsets.only(left: 40.0, right: 40.0),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        border: Border(
-                          bottom: BorderSide(
-                              //  color: this.foregroundColor,
-                              width: 0.5,
-                              style: BorderStyle.solid),
-                        ),
-                      ),
-                      padding: const EdgeInsets.only(left: 0.0, right: 10.0),
-                      child: new Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          new Padding(
-                            padding: EdgeInsets.only(
-                                top: 10.0, bottom: 10.0, right: 00.0),
-                            child: Icon(
-                              Icons.lock_open_outlined,
-                              color: Colors.white,
-                            ),
-                          ),
-                          new Expanded(
-                            child: TextField(
-                              textAlign: TextAlign.center,
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: '********',
-                                hintStyle: TextStyle(
-                                  color: Colors.white54,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    InputWidget(
+                      inputIcon: Icons.lock_open_outlined,
+                      inputText: '********',
                     ),
                     new Container(
-                 margin: const EdgeInsets.only(
+                      margin: const EdgeInsets.only(
                           left: 40.0, right: 40.0, top: 30.0),
                       alignment: Alignment.center,
                       child: new Row(
@@ -175,9 +65,8 @@ class _SignInPageState extends State<SignInPage> {
                               padding: const EdgeInsets.symmetric(
                                   vertical: 20.0, horizontal: 20.0),
                               color: Colors.black54,
-                              onPressed: () => {
-                                 Navigator.pushNamed(context, HomePage.id)
-                              },
+                              onPressed: () =>
+                                  {Navigator.pushNamed(context, HomePage.id)},
                               child: Text(
                                 "Login with Gmail",
                                 style: TextStyle(color: Colors.white),
