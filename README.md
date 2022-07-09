@@ -1,6 +1,10 @@
 # gym_app
 
-A new Flutter project.
+In this project I create a Gym app.
+
+With a User authentication page, splash screen,
+Dashboard homepage, profile page...
+Makes use of Animated splash screen, Sidebar navigation widget, YouTube video dart package, Firebase .
 
 
 
